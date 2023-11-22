@@ -1,8 +1,8 @@
 @extends('index')
 
 @section('content')
-@if(Auth::user()->role == 'superadm' || Auth::user()->role == 'admin')
 <div class="container">
+    @if(Auth::user()->role == 'superadm' || Auth::user()->role == 'admin')
     <div class="custom-buttons-container">
         <a href="{{ route('adminall.token', ['id_event' => $id_event]) }}" class="btn btn-custom-colors btn-sm">
             <i class="mdi mdi-coin"></i> Tambah Token
@@ -14,7 +14,7 @@
 
     <br>
     <br>
-
+@endif
     @if(count($data) > 0)
     <table class="table table-bordered">
         <thead>

@@ -44,6 +44,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/index/kandidat/{id_event}', [IndexController::class, 'kandidat'])
     ->name('adminall.kandidat')
     ->middleware('userAkases:superadm');
+    Route::get('/index/kandidat/{id_event}', [IndexController::class, 'kandidat'])
+    ->name('adminall.kandidat')
+    ->middleware('userAkases:admin');
     
     //Route::get('/createkandidat/{id_event}', [IndexController::class, 'createkandidat'])->name('adminall.tambahkandidat');
     Route::get('/createkandidat/{id_event}', function ($id_event) {

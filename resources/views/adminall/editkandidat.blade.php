@@ -3,7 +3,7 @@
 @section('content') <!-- Menyediakan isi yield konten -->
 <div class="container">
 
-                        @if(Auth::user()->role == 'superadm')
+    @if(Auth::user()->role == 'superadm' || Auth::user()->role == 'admin')
                 
     @if (session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
